@@ -1,2 +1,3 @@
-#!/bin/bash
-python3 -m compileall -b "$PYFILE"
+#!/usr/bin/python3
+number = 98
+print(f"{number:d} Battery street")

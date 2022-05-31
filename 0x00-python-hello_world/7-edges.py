@@ -6,5 +6,8 @@ middle_word = word[1:-1]
 print(f"First 3 letters: {word_first_3}")
 print(f"Last 2 letters: {word_last_2}")
 print(f"Middle word: {middle_word}")
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ac5981f2fd1e3814b8c4748f40e98fbb423f7a3f

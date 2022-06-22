@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-import sys
-
-
 
 
 def magic_calculation(a, b):
@@ -12,6 +9,7 @@ def magic_calculation(a, b):
                 raise Exception('Too far')
             else:
                 result += a ** b / i
-                result = b + a
+        else:
+            result = b + a
             break
     return (result)

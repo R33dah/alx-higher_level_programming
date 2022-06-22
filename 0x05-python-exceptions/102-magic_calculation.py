@@ -2,10 +2,17 @@
 import sys
 
 
-def safe_function(fct, *args):
-    result = None
-    try:
-        result = fct(*args)
-    except Exception as e:
-        sys.stderr.write("Exception: {}\n".format(e))
+
+
+def magic_calculation(a, b):
+    result = 0
+    for i in range(1, 3):
+        try:
+            if i > a:
+                raise Exception('Too far')
+            else:
+                result += a ** b / i
+        except:
+            result = b + a
+            break
     return (result)

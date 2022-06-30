@@ -1,40 +1,28 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
-"""
-This module have a function that prints a text with 2 new lines
-after each of these characters: ., ? and :
-prototype: def text_indentation(text):
-"""
+"""Defines a text-indentation function."""
 
 
 def text_indentation(text):
-    """ function that prints a text with 2 new lines
-    after each of these characters: ., ? and :
-    text must be a string, otherwise raise a TypeErrorexception with the
-    message text must be a string
-    There should be no space at the beginning or the end of each printed line
-    Do not allowed to import any module
+    """Print text with two new lines after each '.', '?', and ':'.
     Args:
-        text: text to modify
+        text (string): The text to print.
     Raises:
-        TypeError: text must be a string
+        TypeError: If text is not a string.
     """
-    if type(text) is not str:
-        raise TypeError('text must be a string')
-    i = 0
-    new_str = ""
-    while i < len(text):
-        if text[i] == ' ' and i == 0:
-            while text[i] == ' ':
-                i += 1
-        if text[i] in '.?:':
-            new_str += text[i]
-            new_str += '\n'
-            new_str += '\n'
-            i += 1
-            while i < len(text) and text[i] == ' ':
-                i += 1
-        if i < len(text) and text[i] not in '.?:':
-            new_str += text[i]
-            i += 1
-    print(new_str, end="")
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
+
+    c = 0
+    while c < len(text) and text[c] == ' ':
+        c += 1
+
+    while c < len(text):
+        print(text[c], end="")
+        if text[c] == "\n" or text[c] in ".?:":
+            if text[c] in ".?:":
+                print("\n")
+            c += 1
+            while c < len(text) and text[c] == ' ':
+                c += 1
+            continue
+        c += 1
